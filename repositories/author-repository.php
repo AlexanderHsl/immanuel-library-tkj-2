@@ -10,6 +10,7 @@ function getAuthors(){
   return $authors;
 }
 function getAuthor(){
-  ["id" => 1, "name" => "Andrea Hirata",          "total_books" => 1];
+  $author = ["id" => 1, "name" => "Andrea Hirata",          "total_books" => 1];
+  return $author;
 }
 

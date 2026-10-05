@@ -1,4 +1,6 @@
 <?php 
+require_once __DIR__."/../../repositories/author-repository.php";   
+$author = getAuthor();
 $pageTitle = "Edit Penulis";
 $pageSubtitle = "Mengedit Penulis";
 ?>
@@ -15,13 +17,6 @@ $pageSubtitle = "Mengedit Penulis";
 </head>
 
 <body>
-  <?php
-  $author = [
-    "id" => 1,
-    "name" => "Andrea Hirata",
-    "bio" => "Penulis asal Belitung, dikenal lewat novel Laskar Pelangi.",
-  ];
-  ?>
   <div class="app-shell">
     <?php require_once __DIR__ . "/../../components/admin/sidebar.php"?>
 
@@ -29,7 +24,7 @@ $pageSubtitle = "Mengedit Penulis";
       <?php require_once __DIR__ . "/../../components/admin/topbar.php"?>
 
       <div class="app-content">
-        <form method="" action="">
+        <form method="post" action="../../actions/authors/update.php">
           <input type="hidden" name="id" value="<?= $author['id'] ?>">
           <div class="form-card">
             <div class="form-section-title">Data Penulis</div>
@@ -39,11 +34,11 @@ $pageSubtitle = "Mengedit Penulis";
             </div>
             <div class="form-group">
               <label for="bio">Biografi Singkat</label>
-              <textarea id="bio" name="bio" rows="3"><?= $author['bio'] ?></textarea>
+              <textarea id="bio" name="bio" rows="3"><?= $author['id'] ?></textarea>
             </div>
             <div class="form-actions">
               <a href="index.php" class="btn btn-outline">Batal</a>
-              <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+              <button name="update" type="submit" class="btn btn-primary">Simpan Perubahan</button>
             </div>
           </div>
         </form>
