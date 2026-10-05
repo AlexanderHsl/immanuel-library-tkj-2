@@ -1,3 +1,8 @@
+<?php 
+$pageTitle = "Manajemen Kategori";
+$pageSubtitle = "Memanajemen Kategori";
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>

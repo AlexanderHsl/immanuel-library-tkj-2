@@ -1,7 +1,13 @@
- <header class="app-topbar">
+<?php
+$pageTitle;
+$pageSubtitle;
+
+?>
+
+<header class="app-topbar">
       <div class="page-title">
-        <h1>Tambah Penulis</h1>
-        <p>Daftarkan penulis baru ke sistem</p>
+        <h1><?= $pageTitle ?></h1>
+        <p><?= $pageSubtitle ?></p>
       </div>
       <div class="topbar-user">
         <span class="avatar">BS</span>

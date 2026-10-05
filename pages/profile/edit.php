@@ -1,3 +1,9 @@
+<?php 
+$pageTitle = "Profil Saya";
+$pageSubtitle = "Menunjukkan Profil saya";
+?>
+
+
 <!DOCTYPE html>
 <html lang="id">
 <head>

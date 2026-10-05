@@ -1,3 +1,9 @@
+<?php 
+$pageTitle = "Edit Pengguna";
+$pageSubtitle = "Mengedit Pengguna";
+?>
+
+
 <!DOCTYPE html>
 <html lang="id">
 <head>

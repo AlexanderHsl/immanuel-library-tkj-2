@@ -1,3 +1,9 @@
+<?php 
+$pageTitle = "Tambah Penulis";
+$pageSubtitle = "Menambah Penulis";
+?>
+
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
