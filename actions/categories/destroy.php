@@ -1,9 +1,9 @@
 <?php
 if (isset($_GET['id'])): {
     $id = $_GET['id'];
-    print_r("buku id $id dihapus");
+    print_r("kategori id $id dihapus");
 }
 else:{
-    echo "id buku tidak ketemu";
+    echo "id kategori tidak ketemu";
 }
 endif;

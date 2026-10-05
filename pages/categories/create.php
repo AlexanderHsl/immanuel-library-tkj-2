@@ -19,7 +19,7 @@ $pageSubtitle = "Menambah Kategori";
    <?php require_once __DIR__ . "/../../components/admin/topbar.php"?>
 
       <div class="app-content">
-        <form method="post" action="../../actions/books/store.php">
+        <form method="post" action="../../actions/categories/store.php">
           <div class="form-card">
             <div class="form-section-title">Data Kategori</div>
             <div class="form-group">
