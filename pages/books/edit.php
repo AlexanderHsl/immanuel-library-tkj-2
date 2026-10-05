@@ -25,7 +25,7 @@ $pageSubtitle = "Mengedit buku";
     <?php require_once __DIR__ . "/../../components/admin/topbar.php"?>
 
       <div class="app-content">
-        <form method="" action="">
+        <form method="post" action="../../actions/books/update.php">
           <input type="hidden" name="id" value="<?= $book['id'] ?>">
           <div class="form-card" style="margin-bottom:20px;">
             <div class="form-section-title">Data Buku</div>
@@ -71,7 +71,7 @@ $pageSubtitle = "Mengedit buku";
                 <?php foreach ($authors as $index => $authorName): ?>
                   <?php $authorId = $index + 1; ?>
                   <label class="checkbox-item">
-                    <input type="checkbox" name="author_ids[]" value="<?= $authorId ?>" <?= in_array($authorId, $book['author_ids']) ? 'checked' : '' ?>>
+                    <input type="checkbox" name="author_ids[]" value="<?= $authorId ?>" <?= in_array($authorId, $book['authors']) ? 'checked' : '' ?>>
                     <?= $authorName ?>
                   </label>
                 <?php endforeach; ?>
@@ -80,7 +80,7 @@ $pageSubtitle = "Mengedit buku";
 
             <div class="form-actions">
               <a href="index.php" class="btn btn-outline">Batal</a>
-              <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+              <button name="update" type="submit" class="btn btn-primary">Simpan Perubahan</button>
             </div>
           </div>
         </form>
