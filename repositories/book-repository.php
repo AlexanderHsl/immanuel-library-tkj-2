@@ -53,7 +53,7 @@ function getBook(){
   "stock" => 4,
   "category" => "Fiksi",
   "description" => "Kumpulan puisi dan cerita pendek dari berbagai penulis Nusantara.",
-  "authors" => ["Pramoedya Ananta Toer", "Sapardi Djoko Damono"],
+  "authors" => ["Pramoedya Ananta Toer", "Sapardi Djoko Damono"]
   ];
   return $book;
 }

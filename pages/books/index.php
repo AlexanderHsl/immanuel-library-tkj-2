@@ -1,4 +1,7 @@
 <?php 
+require_once __DIR__."/../../repositories/book-repository.php";
+$book = getBook();
+$books = getBooks();
 $pageTitle = "Manajemen Buku";
 $pageSubtitle = "Memanajemen buku";
 ?>
@@ -15,16 +18,6 @@ $pageSubtitle = "Memanajemen buku";
 </head>
 
 <body>
-  <?php
-  $book = [
-    "id" => 1,
-    "title" => "Laskar Pelangi",
-    "category" => "Fiksi",
-    "year" => 2005,
-    "stock" => 12,
-    "authors" => "Andrea Hirata",
-  ];
-  ?>
   <div class="app-shell">
     <?php require_once __DIR__ . "/../../components/admin/sidebar.php"?>
 
@@ -66,6 +59,7 @@ $pageSubtitle = "Memanajemen buku";
               </tr>
             </thead>
             <tbody>
+              <?php foreach($books as $index => $book ):?>
               <tr>
                 <td>
                   <div class="cell-primary">
@@ -80,7 +74,9 @@ $pageSubtitle = "Memanajemen buku";
                 <td><span class="badge badge-muted"><?= $book['category'] ?></span></td>
                 <td>
                   <div class="chip-list">
-                    <span class="chip"><?= $book['authors'] ?></span>
+                    <?php foreach ($book['authors'] as $author): ?>
+                      <span class="chip"><?= ($author) ?></span>
+                    <?php endforeach; ?>
                   </div>
                 </td>
                 <td><?= $book['stock'] ?></td>
@@ -91,6 +87,7 @@ $pageSubtitle = "Memanajemen buku";
                   </div>
                 </td>
               </tr>
+              <?php endforeach;?>
             </tbody>
           </table>
         </div>
@@ -103,5 +100,4 @@ $pageSubtitle = "Memanajemen buku";
     </main>
   </div>
 </body>
-
 </html>
