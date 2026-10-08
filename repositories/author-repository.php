@@ -10,7 +10,7 @@ function getAuthors(){
   return $authors;
 }
 function getAuthor(){
-  $author = ["id" => 1, "name" => "Andrea Hirata",          "total_books" => 1];
+  $author = ["id" => 1, "name" => "Andrea Hirata",          "total_books" => 1, "bio" => "Sangat ganteng dan berbakat"];
   return $author;
 }
 

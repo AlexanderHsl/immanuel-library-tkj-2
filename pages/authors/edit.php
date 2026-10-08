@@ -34,7 +34,7 @@ $pageSubtitle = "Mengedit Penulis";
             </div>
             <div class="form-group">
               <label for="bio">Biografi Singkat</label>
-              <textarea id="bio" name="bio" rows="3"><?= $author['id'] ?></textarea>
+              <textarea id="bio" name="bio" rows="3"><?= $author['bio'] ?></textarea>
             </div>
             <div class="form-actions">
               <a href="index.php" class="btn btn-outline">Batal</a>
