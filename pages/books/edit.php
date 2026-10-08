@@ -53,7 +53,7 @@ $pageSubtitle = "Mengedit buku";
                 <label for="category_id">Kategori</label>
                 <select id="category_id" name="category_id">
                   <?php foreach ($categories as $category): ?>
-                    <option value="<?= $category['id'] ?>" <?= $category['id'] == $book['category_id'] ? 'selected' : '' ?>>
+                    <option value="<?= $category['id'] ?>" <?= $category['id'] == $book['category'] ? 'selected' : '' ?>>
                       <?= ($category['name']) ?>
                     </option>
                   <?php endforeach; ?>
