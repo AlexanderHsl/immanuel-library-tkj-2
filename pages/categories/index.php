@@ -1,6 +1,7 @@
 <?php 
 require_once __DIR__."/../../repositories/category-repository.php";
 $categories = getCategories();
+$category = getCategory();
 $pageTitle = "Manajemen Kategori";
 $pageSubtitle = "Memanajemen Kategori";
 ?>
