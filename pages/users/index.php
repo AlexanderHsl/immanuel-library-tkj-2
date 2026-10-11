@@ -1,11 +1,11 @@
-<?php 
+<?php
 require_once __DIR__ . "/../../repositories/user-repository.php";
-$user = getUser();
-$users = getUsers();
-$pageTitle = "Manajemen Pengguna";
-$pageSubtitle = "Memanajemen Pengguna";
-?>
 
+$users = getUsers();
+
+$pageTitle = "Manajemen Pengguna";
+$pageSubtitle = "Daftar seluruh pengguna beserta perannya (role)";
+?>
 
 <!DOCTYPE html>
 <html lang="id">
@@ -17,10 +17,10 @@ $pageSubtitle = "Memanajemen Pengguna";
 </head>
 <body>
   <div class="app-shell">
-  <?php require_once __DIR__ . "/../../components/admin/sidebar.php"?>
+  <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
     <main class="app-main">
-    <?php require_once __DIR__ . "/../../components/admin/topbar.php"?>
+    <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
         <div class="toolbar">
@@ -45,7 +45,7 @@ $pageSubtitle = "Memanajemen Pengguna";
               </tr>
             </thead>
             <tbody>
-              <?php foreach($users as $index => $user):?>
+              <?php foreach ($users as $user): ?>
                 <tr>
                   <td>
                     <div class="cell-primary">
@@ -64,11 +64,12 @@ $pageSubtitle = "Memanajemen Pengguna";
                   <td>
                     <div class="cell-actions">
                       <a href="edit.php?id=<?= $user['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                      <a href="../../actions/users/destroy.php?id=<?= $user['id'] ?>" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">Hapus</a>
+                      <a href="../../actions/users/destroy.php?id=<?= $user['id'] ?>" class="btn btn-danger btn-sm"
+                        onclick="return confirm('Yakin ingin menghapus pengguna ini?')">Hapus</a>
                     </div>
                   </td>
                 </tr>
-                <?php endforeach ?>
+              <?php endforeach ?>
             </tbody>
           </table>
         </div>

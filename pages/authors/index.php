@@ -1,10 +1,11 @@
-<?php 
-require_once __DIR__."/../../repositories/author-repository.php";  
-$authors = getAuthors();
-$pageTitle = "Manajemen Penulis";
-$pageSubtitle = "Memanajemen Penulis";
-?>
+<?php
+require_once __DIR__ . "/../../repositories/author-repository.php";
 
+$authors = getAuthors();
+
+$pageTitle = "Manajemen Penulis";
+$pageSubtitle = "Kelola data penulis yang terdaftar di sistem";
+?>
 
 <!DOCTYPE html>
 <html lang="id">
@@ -15,14 +16,11 @@ $pageSubtitle = "Memanajemen Penulis";
   <link rel="stylesheet" href="../../styles/authors/index.css">
 </head>
 <body>
-  <?php
-  $author = ["id" => 1, "name" => "Andrea Hirata", "total_books" => 1];
-  ?>
   <div class="app-shell">
-  <?php require_once __DIR__ . "/../../components/admin/sidebar.php"?>
+  <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
     <main class="app-main">
-    <?php require_once __DIR__ . "/../../components/admin/topbar.php"?>
+    <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
         <div class="toolbar">
@@ -46,7 +44,7 @@ $pageSubtitle = "Memanajemen Penulis";
               </tr>
             </thead>
             <tbody>
-              <?php foreach($authors as $index => $author):?>
+              <?php foreach ($authors as $author): ?>
                 <tr>
                   <td>
                     <div class="cell-primary">
@@ -58,11 +56,12 @@ $pageSubtitle = "Memanajemen Penulis";
                   <td>
                     <div class="cell-actions">
                       <a href="edit.php?id=<?= $author['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                      <a href="../../actions/authors/destroy.php?id=<?= $author['id'] ?>" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">Hapus</a>
+                      <a href="../../actions/authors/destroy.php?id=<?= $author['id'] ?>" class="btn btn-danger btn-sm"
+                        onclick="return confirm('Yakin ingin menghapus penulis ini?')">Hapus</a>
                     </div>
                   </td>
                 </tr>
-              <?php endforeach?>
+              <?php endforeach ?>
             </tbody>
           </table>
         </div>

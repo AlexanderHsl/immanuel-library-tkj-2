@@ -1,11 +1,12 @@
-<?php 
+<?php
 require_once __DIR__ . "/../../repositories/user-repository.php";
+
 $user = getUser();
 $profile = getProfile();
-$pageTitle = "Profil Saya";
-$pageSubtitle = "Menunjukkan Profil saya";
-?>
 
+$pageTitle = "Profil Saya";
+$pageSubtitle = "Kelola data akun dan profil Anda";
+?>
 
 <!DOCTYPE html>
 <html lang="id">
@@ -16,19 +17,14 @@ $pageSubtitle = "Menunjukkan Profil saya";
   <link rel="stylesheet" href="../../styles/profile/edit.css">
 </head>
 <body>
-  <?php
- 
-
-  
-  ?>
   <div class="app-shell">
-  <?php require_once __DIR__ . "/../../components/admin/sidebar.php"?>
+  <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
     <main class="app-main">
-    <?php require_once __DIR__ . "/../../components/admin/topbar.php"?>
+    <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
-        <form method="Post" action="../../actions/profile/update.php">
+        <form method="POST" action="../../actions/profile/update.php">
           <div class="form-card" style="margin-bottom:20px;">
             <div class="form-section-title">Data Akun</div>
             <div class="form-row">
@@ -64,7 +60,7 @@ $pageSubtitle = "Menunjukkan Profil saya";
             </div>
             <div class="form-actions">
               <button type="button" class="btn btn-outline">Batal</button>
-              <button name="update" type="submit" class="btn btn-primary">Simpan Perubahan</button>
+              <button type="submit" name="update" class="btn btn-primary">Simpan Perubahan</button>
             </div>
           </div>
         </form>

@@ -1,9 +1,10 @@
-<?php 
-require_once __DIR__."/../../repositories/category-repository.php";
+<?php
+require_once __DIR__ . "/../../repositories/category-repository.php";
+
 $categories = getCategories();
-$category = getCategory();
+
 $pageTitle = "Manajemen Kategori";
-$pageSubtitle = "Memanajemen Kategori";
+$pageSubtitle = "Kelola kategori untuk mengelompokkan buku";
 ?>
 
 <!DOCTYPE html>
@@ -15,12 +16,12 @@ $pageSubtitle = "Memanajemen Kategori";
   <link rel="stylesheet" href="../../styles/categories/index.css">
 </head>
 <body>
-  
   <div class="app-shell">
-  <?php require_once __DIR__ . "/../../components/admin/sidebar.php"?>
+  <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
     <main class="app-main">
-    <?php require_once __DIR__ . "/../../components/admin/topbar.php"?>
+    <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
+
       <div class="app-content">
         <div class="toolbar">
           <form method="" action="" class="toolbar-filters">
@@ -44,7 +45,7 @@ $pageSubtitle = "Memanajemen Kategori";
               </tr>
             </thead>
             <tbody>
-              <?php foreach ($categories as $index => $category):?>
+              <?php foreach ($categories as $category): ?>
                 <tr>
                   <td>
                     <div class="cell-primary">
@@ -57,13 +58,12 @@ $pageSubtitle = "Memanajemen Kategori";
                   <td>
                     <div class="cell-actions">
                       <a href="edit.php?id=<?= $category['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                      <a href="../../actions/categories/destroy.php?id=<?= $category['id'] ?>" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">Hapus</a>
+                      <a href="../../actions/categories/destroy.php?id=<?= $category['id'] ?>" class="btn btn-danger btn-sm"
+                        onclick="return confirm('Yakin ingin menghapus kategori ini?')">Hapus</a>
                     </div>
                   </td>
                 </tr>
-              <?php endforeach?>
-
-              
+              <?php endforeach ?>
             </tbody>
           </table>
         </div>

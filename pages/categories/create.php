@@ -1,9 +1,6 @@
-<?php 
-require_once __DIR__."/../../repositories/category-repository.php";
-$categories = getCategories();
-$category = getCategory();
+<?php
 $pageTitle = "Tambah Kategori";
-$pageSubtitle = "Menambah Kategori";
+$pageSubtitle = "Buat kategori baru untuk mengelompokkan buku";
 ?>
 
 <!DOCTYPE html>
@@ -16,13 +13,13 @@ $pageSubtitle = "Menambah Kategori";
 </head>
 <body>
   <div class="app-shell">
-  <?php require_once __DIR__ . "/../../components/admin/sidebar.php"?>
+  <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
     <main class="app-main">
-   <?php require_once __DIR__ . "/../../components/admin/topbar.php"?>
+    <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
-        <form method="post" action="../../actions/categories/store.php">
+        <form method="POST" action="../../actions/categories/store.php">
           <div class="form-card">
             <div class="form-section-title">Data Kategori</div>
             <div class="form-group">
@@ -36,7 +33,7 @@ $pageSubtitle = "Menambah Kategori";
 
             <div class="form-actions">
               <a href="index.php" class="btn btn-outline">Batal</a>
-              <button name="store"type="submit" class="btn btn-primary">Simpan Kategori</button>
+              <button type="submit" name="store" class="btn btn-primary">Simpan Kategori</button>
             </div>
           </div>
         </form>

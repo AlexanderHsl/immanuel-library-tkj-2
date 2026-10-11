@@ -1,9 +1,8 @@
 <?php
-if (isset($_GET['id'])): {
+if (isset($_GET['id']) && $_SERVER['REQUEST_METHOD'] === "GET") {
     $id = $_GET['id'];
-    print_r("kategori id $id dihapus");
+
+    echo "Kategori dengan id " . htmlspecialchars($id) . " berhasil dihapus.";
 }
-else:{
-    echo "id kategori tidak ketemu";
-}
-endif;
+
+?>
